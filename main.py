@@ -38,16 +38,21 @@ def pngconversion():
         import tkinter.messagebox
         tkinter.messagebox.showinfo('info','Please Import A File Than Convert!')
     if filename!=None:
-        image=Image.open(f'{filename.name}') 
-        image__=image.save(f'{str(filename_1.name)}.png')
-        from tkinter import messagebox
-        messagebox.showinfo('(:',f' File Succesfully Converted! (Saved At)--{filename_1.name}.png')
-        import time
-        time.sleep(0.50)
-        os.startfile(f'{str(filename_1.name)}.png')
-        value_1=conversion_text.get()
-        saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-        saved_file_path.place(x=1,y=125),'⟶'''
+        try:
+            image=Image.open(f'{filename.name}') 
+            image__=image.save(f'{str(filename_1.name)}.png')
+            from tkinter import messagebox
+            messagebox.showinfo('(:',f' File Succesfully Converted! (Saved At)--{filename_1.name}.png')
+            import time
+            time.sleep(0.50)
+            os.startfile(f'{str(filename_1.name)}.png')
+            value_1=conversion_text.get()
+            saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
+            saved_file_path.place(x=1,y=125),'⟶'''
+        except Exception:
+            saved_file_path.config(text='')
+            import tkinter.messagebox
+            tkinter.messagebox.showwarning('Info','File Not Saved!')
 # This Function Converts An Image To ICON File
 def icoconversion():
     import tkinter
@@ -59,20 +64,25 @@ def icoconversion():
     name=os.path.basename(str(rela_file_name))
     print(name)
     print(rela_file_name)
-    if filename==None and filename_1:
+    if filename==None:
         tkinter.messagebox.showinfo('info','Please Import A File Than Convert!')
-    if filename!=None and filename_1:
-        image=Image.open(f'''{str(filename.name)}''')
-        rgba_=image.convert('RGBA')
-        image__=rgba_.save(f'{str(filename_1.name)}.ico')
-        from tkinter import messagebox
-        messagebox.showinfo('(:',f'File Succesfully Converted! (Saved At)--{filename_1.name}.ico')   
-        import time
-        time.sleep(0.50)
-        os.startfile(f'{str(filename_1.name)}.ico')
-        value_1=conversion_text.get()
-        saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-        saved_file_path.place(x=1,y=125),'⟶'''
+    if filename!=None :
+        try:
+            image=Image.open(f'''{str(filename.name)}''')
+            rgba_=image.convert('RGBA')
+            image__=rgba_.save(f'{str(filename_1.name)}.ico')
+            from tkinter import messagebox
+            messagebox.showinfo('(:',f'File Succesfully Converted! (Saved At)--{filename_1.name}.ico')   
+            import time
+            time.sleep(0.50)
+            os.startfile(f'{str(filename_1.name)}.ico')
+            value_1=conversion_text.get()
+            saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
+            saved_file_path.place(x=1,y=125),'⟶'''
+        except Exception:
+            saved_file_path.config(text='')
+            import tkinter.messagebox
+            tkinter.messagebox.showwarning('Info','File Not Saved!')
 # This Function Converts An Image To GIIF File
 def gifconversion():
     import tkinter
@@ -87,16 +97,21 @@ def gifconversion():
     if filename==None:
         tkinter.messagebox.showinfo('info','Please Import A File Than Convert!')
     if filename!=None:
-        image=Image.open(f'''{str(filename.name)}''')
-        image__=image.save(f'{str(filename_1.name)}.gif')
-        from tkinter import messagebox
-        messagebox.showinfo('(:',f'File Succesfully Converted! (Saved At)--{filename_1.name}.gif')   
-        import time
-        time.sleep(0.50)
-        os.startfile(f'{str(filename_1.name)}.gif')
-        value_1=conversion_text.get()
-        saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-        saved_file_path.place(x=1,y=125),'⟶'''
+        try:
+            image=Image.open(f'''{str(filename.name)}''')
+            image__=image.save(f'{str(filename_1.name)}.gif')
+            from tkinter import messagebox
+            messagebox.showinfo('(:',f'File Succesfully Converted! (Saved At)--{filename_1.name}.gif')   
+            import time
+            time.sleep(0.50)
+            os.startfile(f'{str(filename_1.name)}.gif')
+            value_1=conversion_text.get()
+            saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
+            saved_file_path.place(x=1,y=125),'⟶'''
+        except Exception:
+            saved_file_path.config(text='')
+            import tkinter.messagebox
+            tkinter.messagebox.showwarning('Info','File Not Saved!')
 # This Function Converts An Image File To A TIFF File
 def tiffconversion():
     import tkinter
@@ -111,16 +126,21 @@ def tiffconversion():
     if filename==None:
         tkinter.messagebox.showinfo('info','Please Import A File Than Convert!')
     if filename!=None:
-        image=Image.open(f'{filename.name}').convert('RGB')
-        image__=image.save(f'{str(filename_1.name)}.tiff',format='TIFF', compression='tiff_lzw')
-        from tkinter import messagebox
-        messagebox.showinfo('(:',f'File Succesfully Converted! (Saved At)--{filename_1.name}.tiff')   
-        import time
-        time.sleep(0.50)
-        os.startfile(f'{str(filename_1.name)}.tiff')
-        value_1=conversion_text.get()
-        saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-        saved_file_path.place(x=1,y=125),'''⟶'''
+        try:
+            image=Image.open(f'{filename.name}').convert('RGB')
+            image__=image.save(f'{str(filename_1.name)}.tiff',format='TIFF', compression='tiff_lzw')
+            from tkinter import messagebox
+            messagebox.showinfo('(:',f'File Succesfully Converted! (Saved At)--{filename_1.name}.tiff')   
+            import time
+            time.sleep(0.50)
+            os.startfile(f'{str(filename_1.name)}.tiff')
+            value_1=conversion_text.get()
+            saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
+            saved_file_path.place(x=1,y=125),'''⟶'''
+        except Exception:
+            saved_file_path.config(text='')
+            import tkinter.messagebox
+            tkinter.messagebox.showwarning('Info','File Not Saved!')
 # This Function Converts An Image To a JPG File
 def jpgconversion():
     from PIL import Image
@@ -134,17 +154,22 @@ def jpgconversion():
     if filename==None:
         tkinter.messagebox.showinfo('info','Please Import A File Than Convert!')
     if filename!=None:
-        image=Image.open(f'{filename.name}')
-        jpg_to_png=image.convert('RGB')
-        jpg_to_png.save(f'{str(filename_1.name)}.jpg')
-        from tkinter import messagebox
-        messagebox.showinfo('(:',f'File Succesfully Converted! (Saved At)--{filename_1.name}.jpg')   
-        import time
-        time.sleep(0.50)
-        value_1=conversion_text.get()
-        os.startfile(f'{str(filename_1.name)}.jpg')
-        saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-        saved_file_path.place(x=1,y=125),'''⟶''' 
+        try:
+            image=Image.open(f'{filename.name}')
+            jpg_to_png=image.convert('RGB')
+            jpg_to_png.save(f'{str(filename_1.name)}.jpg')
+            from tkinter import messagebox
+            messagebox.showinfo('(:',f'File Succesfully Converted! (Saved At)--{filename_1.name}.jpg')   
+            import time
+            time.sleep(0.50)
+            value_1=conversion_text.get()
+            os.startfile(f'{str(filename_1.name)}.jpg')
+            saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
+            saved_file_path.place(x=1,y=125),'''⟶''' 
+        except Exception:
+            saved_file_path.config(text='')
+            import tkinter.messagebox
+            tkinter.messagebox.showwarning('Info','File Not Saved!')
 # This Function Converts An Image To BITMAP File
 def bmpconversion():
     from PIL import Image
@@ -161,15 +186,20 @@ def bmpconversion():
         tkinter.messagebox.showinfo('info','Please Import A File Than Convert!')
         saved_file_path.config(text=None)
     if filename!=None:
-        image=Image.open(f'''{str(filename.name)}''')
-        image__=image.save(f'{str(filename_1.name)}.bmp')
-        from tkinter import messagebox
-        messagebox.showinfo('(:',f'File Succesfully Converted! (Saved At)--{filename_1.name}.bmp')   
-        import time
-        time.sleep(0.50)
-        os.startfile(f'{str(filename_1.name)}.bmp')
-        saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-        saved_file_path.place(x=1,y=125),'''⟶''' 
+        try:
+            image=Image.open(f'''{str(filename.name)}''')
+            image__=image.save(f'{str(filename_1.name)}.bmp')
+            from tkinter import messagebox
+            messagebox.showinfo('(:',f'File Succesfully Converted! (Saved At)--{filename_1.name}.bmp')   
+            import time
+            time.sleep(0.50)
+            os.startfile(f'{str(filename_1.name)}.bmp')
+            saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
+            saved_file_path.place(x=1,y=125),'''⟶''' 
+        except Exception:
+            saved_file_path.config(text='')
+            import tkinter.messagebox
+            tkinter.messagebox.showwarning('Info','File Not Saved!')
 # This Function Asks To Open A Png File
 def png_to_all_aviable_formats():
     from tkinter import filedialog 
@@ -367,3 +397,4 @@ import_button.place(x=1,y=65)# Showing Our Button In Our Main Window That Means 
 save_as_button=Button(root,text='Save As',state=DISABLED)# Button To Save The Image
 save_as_button.place(x=275,y=65)# Showing Our Button In Our Main Window That Means I Am Packing The Button.
 mainloop()#Stop The Window Till Window Is Not Closed.
+# End!
