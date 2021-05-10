@@ -55,7 +55,7 @@ def pngconversion():
             tkinter.messagebox.showwarning('Info','File Not Saved!')
 # This Function Converts An Image To ICON File
 def icoconversion():
-    import tkinter
+    import tkinter.messagebox
     from PIL import Image
     import os
     from tkinter import filedialog
@@ -85,7 +85,7 @@ def icoconversion():
             tkinter.messagebox.showwarning('Info','File Not Saved!')
 # This Function Converts An Image To GIIF File
 def gifconversion():
-    import tkinter
+    import tkinter.messagebox
     from PIL import Image
     import os
     from tkinter import filedialog
@@ -114,7 +114,7 @@ def gifconversion():
             tkinter.messagebox.showwarning('Info','File Not Saved!')
 # This Function Converts An Image File To A TIFF File
 def tiffconversion():
-    import tkinter
+    import tkinter.messagebox
     from PIL import Image
     import os
     from tkinter import filedialog
@@ -143,6 +143,7 @@ def tiffconversion():
             tkinter.messagebox.showwarning('Info','File Not Saved!')
 # This Function Converts An Image To a JPG File
 def jpgconversion():
+    import tkinter.messagebox
     from PIL import Image
     import os
     from tkinter import filedialog
@@ -173,6 +174,7 @@ def jpgconversion():
 # This Function Converts An Image To BITMAP File
 def bmpconversion():
     from PIL import Image
+    import tkinter.messagebox
     import os
     value_1=conversion_text.get()
     from tkinter import filedialog
