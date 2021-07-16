@@ -25,7 +25,7 @@ def tkinter_window_is_closed():# A Function That Ask Are You Sure Quit? When Use
 root.protocol('WM_DELETE_WINDOW',tkinter_window_is_closed)# Detecting That Our Window Is Closed. If Closed Then Call This kinter_window_is_closed() function.
 root.title('Image Converter')# Specifying Title
 root.geometry('400x210')# Specifying  Size
-# This Function Converts An Image To PNG Format.
+# This Function Converts An Image To PDF Format.
 def pdfconversion():
     import tkinter.messagebox
     import tkinter
@@ -51,11 +51,12 @@ def pdfconversion():
             os.startfile(f'{str(filename_1.name)}.pdf')
             value_1=conversion_text.get()
             saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-            saved_file_path.place(x=1,y=125),'⟶'''
+            saved_file_path.place(x=1,y=125),'?'''
         except Exception:
             saved_file_path.config(text='')
             import tkinter.messagebox
             tkinter.messagebox.showwarning('Info','File Not Saved! Or Imported Image Conversion Not Suppported!!')
+# This Function Converts An Image To PNG Format.
 def pngconversion():
     import tkinter.messagebox
     import tkinter
@@ -73,7 +74,6 @@ def pngconversion():
     if filename!=None:
         try:
             image=Image.open(f'{filename.name}')
-            # png to pdf
             rgb=image.convert('RGB')
             image__=rgb.save(f'{str(filename_1.name)}.png')
             from tkinter import messagebox
@@ -83,7 +83,7 @@ def pngconversion():
             os.startfile(f'{str(filename_1.name)}.png')
             value_1=conversion_text.get()
             saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-            saved_file_path.place(x=1,y=125),'⟶'''
+            saved_file_path.place(x=1,y=125),'?'''
         except Exception:
             saved_file_path.config(text='')
             import tkinter.messagebox
@@ -114,7 +114,7 @@ def icoconversion():
             os.startfile(f'{str(filename_1.name)}.ico')
             value_1=conversion_text.get()
             saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-            saved_file_path.place(x=1,y=125),'⟶'''
+            saved_file_path.place(x=1,y=125),'?'''
         except Exception:
             saved_file_path.config(text='')
             import tkinter.messagebox
@@ -143,7 +143,7 @@ def gifconversion():
             os.startfile(f'{str(filename_1.name)}.gif')
             value_1=conversion_text.get()
             saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-            saved_file_path.place(x=1,y=125),'⟶'''
+            saved_file_path.place(x=1,y=125),'?'''
         except Exception:
             saved_file_path.config(text='')
             import tkinter.messagebox
@@ -172,7 +172,7 @@ def tiffconversion():
             os.startfile(f'{str(filename_1.name)}.tiff')
             value_1=conversion_text.get()
             saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-            saved_file_path.place(x=1,y=125),'''⟶'''
+            saved_file_path.place(x=1,y=125),'''?'''
         except Exception:
             saved_file_path.config(text='')
             import tkinter.messagebox
@@ -202,7 +202,7 @@ def jpgconversion():
             value_1=conversion_text.get()
             os.startfile(f'{str(filename_1.name)}.jpg')
             saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-            saved_file_path.place(x=1,y=125),'''⟶''' 
+            saved_file_path.place(x=1,y=125),'''?''' 
         except Exception:
             saved_file_path.config(text='')
             import tkinter.messagebox
@@ -233,7 +233,7 @@ def bmpconversion():
             time.sleep(0.50)
             os.startfile(f'{str(filename_1.name)}.bmp')
             saved_file_path.config(text=f'''Saved File Path- {filename_1.name}.{value_1}''')
-            saved_file_path.place(x=1,y=125),'''⟶''' 
+            saved_file_path.place(x=1,y=125),'''?''' 
         except Exception:
             saved_file_path.config(text='')
             import tkinter.messagebox
@@ -250,7 +250,7 @@ def png_to_all_aviable_formats():
     filename=filedialog.askopenfile(filetypes=(("png file","*.png"),("png file","*.png")))
     if filename == None:
         import tkinter.messagebox
-        tkinter.messagebox.showwarning('info','Please Import A File!! Aotherwise File Will Not Convert!')
+        tkinter.messagebox.showwarning('info','Please Import A File!! OtherWisewise File Will Not Convert!')
         opend_file_path.config(text='')
         save_as_combox['state']='Disabled'
         save_as_combox['state']='readonly'
@@ -274,7 +274,7 @@ def ico_to_all_aviable_formats():
     if filename == None:
         opend_file_path.config(text='')
         import tkinter.messagebox
-        tkinter.messagebox.showwarning('info','Please Import A File!! Aotherwise File Will Not Convert!')
+        tkinter.messagebox.showwarning('info','Please Import A File!! OtherWisewise File Will Not Convert!')
         save_as_combox['state']='Disabled'
         save_as_combox['state']='readonly'
     if filename !=None:
@@ -294,7 +294,7 @@ def gif_to_all_aviable_formats():
         opend_file_path.config(text='')
 
         import tkinter.messagebox
-        tkinter.messagebox.showwarning('info','Please Import A File!! Aotherwise File Will Not Convert!')
+        tkinter.messagebox.showwarning('info','Please Import A File!! OtherWisewise File Will Not Convert!')
         save_as_combox['state']='Disabled'
         save_as_combox['state']='readonly'
     if filename !=None:
@@ -313,7 +313,7 @@ def tiff_to_all_aviable_formats():
     if filename == None:
         opend_file_path.config(text='')
         import tkinter.messagebox
-        tkinter.messagebox.showwarning('info','Please Import A File!! Aotherwise File Will Not Convert!')
+        tkinter.messagebox.showwarning('info','Please Import A File!! Otherwise File Will Not Convert!')
         save_as_combox['state']='Disabled'
         save_as_combox['state']='readonly'
     if filename !=None:
@@ -323,7 +323,7 @@ def tiff_to_all_aviable_formats():
 def jpg_to_all_aviable_formats():
     from tkinter import filedialog 
     global filename
-    filename=filedialog.askopenfile(filetypes=(("jpg file","*.jpg"),("jpg file","*.jpg")))
+    filename=filedialog.askopenfile(filetypes=(("jpg file","*.jpg"),("jpg file","*.jpg"),('jpeg file','*.jpeg')))
     try:
         opend_file_path.config(text=f'''Opened File Path- {filename.name}''')
         opend_file_path.place(x=1,y=100)
@@ -442,7 +442,6 @@ def value_of_chekbox(self):
         import_button.config(command=pdf_to_all_aviable_formats)
         import_button.config(text='Import A Pdf Type File')
         pdf_to_all_aviable_formats()
-
 to_label=ttk.Label(root,text='Convert To',font=(2))# A Label That Shows Convert To
 to_label.place(x=230,y=35)# Showing Our Button In Our Main Window That Means I Am Packing The Button.
 text=StringVar()## Variable For Testing Which Option In save_as_combox is slected
